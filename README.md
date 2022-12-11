@@ -6,7 +6,7 @@
 
 ## Welcome to our Final Project!
 
-In a nutshell -------!
+In a nutshell, we're matching a list of ingredients to the best recipe! We're using this [dataset](https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images?select=Food+Ingredients+and+Recipe+Dataset+with+Image+Name+Mapping.csv).
 
 Team Members:
 - [Anvi Agrawal](https://github.com/agarwalanvi01)
