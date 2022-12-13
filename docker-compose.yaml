@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  web-app:
+    build: ./web-app # build the Docker image from the Dockerfile in the front-end directory
+    ports:
+      - 2001:2001 # map port 2001 of host machine to port 3000 of container
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+  machine-learning-client:
+    build: ./machine-learning-client
+    ports:
+      - 2000:2000
+    depends_on:
+      - mongo
