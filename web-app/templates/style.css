@@ -14,3 +14,7 @@ body {
 p {
 	margin-top: 1rem;
 }
+
+form > * {
+	padding-top: 1rem;
+}
