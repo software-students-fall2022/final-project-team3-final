@@ -1,14 +1,18 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-family: 'Helvetica Neue';
+	font-family: 'IBM Plex Sans', sans-serif;
 }
 
 body {
 	margin: auto;
-    width: 70%;
+    width: 75%;
 	padding: 1rem;
 	margin-top: 2rem;
+}
+
+tr {
+	text-align: left;
 }
 
 p {
@@ -16,5 +20,5 @@ p {
 }
 
 form > * {
-	padding-top: 1rem;
+	margin-top: 1rem;
 }

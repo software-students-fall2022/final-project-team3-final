@@ -21,7 +21,10 @@ try:
 def index():
 	return render_template('index.html')
 
-
+@app.route("/results")
+def results():
+	recipes = {'img': 'img', 'name': 'pizza', 'spices': 'oregano, basil'}
+	return render_template('results.html', recipes=recipes)
 
 # run the app
 if __name__ == "__main__":
