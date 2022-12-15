@@ -8,6 +8,8 @@
 
 In a nutshell, we're matching a list of ingredients to the best recipe! We're using this [dataset](https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images?select=Food+Ingredients+and+Recipe+Dataset+with+Image+Name+Mapping.csv).
 
+Figma designs link [here](https://www.figma.com/file/9vgLSVy1IFhfK5x9lc7Z5r/SWE-Project-5?node-id=0%3A1&t=uthrQBeSZ5pnSrXY-1)
+
 Team Members:
 - [Anvi Agrawal](https://github.com/agarwalanvi01)
 - [Ishana Goyal](https://github.com/ishana-goyal)
