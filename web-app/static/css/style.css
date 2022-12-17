@@ -1,0 +1,61 @@
+#title {
+	position: absolute;
+	width: 322px;
+	height: 58px;
+	left: 100px;
+	top: 30px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 42px;
+	line-height: 58px;
+	color: #2D3561;
+}
+
+#searchBox {
+	box-sizing: border-box;
+	position: absolute;
+	width: 900px;
+	height: 60px;
+	left: 100px;
+	top: 150px;
+	border: 3px solid #C05C7E;
+	border-radius: 15px;
+}
+
+#userInput {
+	position: absolute;
+	width: 850px;
+	height: 50px;
+	padding-left: 25px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	color: #2D3561;
+}
+
+.button {
+	position: absolute;
+	width: 150px;
+	height: 60px;
+	left: 910px;
+	top: -2.5px;
+
+	background: #C05C7E;
+	border: 3px solid #C05C7E;
+	border-radius: 15px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+
+	color: #FFFFFF;
+}

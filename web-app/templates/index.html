@@ -4,16 +4,17 @@
 		<title>Spice Grindr</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="style.css" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+		<link href="static/css/style.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<h1>Welcome to Spice Grindr!</h1>
-		<p>Please type in a spice below...</p>
-		
-		<form action='/' method='POST'>
-			<input type='text' name='userInput' placeholder="Your spice...">
-			<input type='submit' value='Submit'>
+		<h1 id="title">Spice Grindr</h1>
+		<form action="/" method="POST" id="searchBox">
+			<input type="text" id="userInput" name="userInput" placeholder="Type ingredients here...">
+			<input type="submit" class="button" placeholder="Search">
 		</form>
+		
 	</body>
 </html>
