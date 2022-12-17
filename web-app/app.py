@@ -2,10 +2,15 @@ from flask import Flask, render_template, request, redirect, abort, url_for, mak
 from pymongo import MongoClient
 from dotenv import dotenv_values
 import os
+from os.path import dirname, join
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import recipe_logic
 
 # global variables 
 config = dotenv_values(".env")
 app = Flask(__name__)
+userInput = ''
 
 # connect to the database
 # don't know if we want to change this for next time 
@@ -32,6 +37,7 @@ def index():
 def results():
 	recipe = {'img': 'img-link', 'name': 'pizza', 'spices': 'oregano, basil'}
 	recipes = [recipe]
+	#recipes = recipe_logic.get_recipes(userInput) <- for later
 	return render_template('results.html', recipes=recipes)
 
 # run the app
