@@ -2,9 +2,6 @@ from flask import Flask, render_template, request, redirect, abort, url_for, mak
 from pymongo import MongoClient
 from dotenv import dotenv_values
 import os
-from os.path import dirname, join
-import sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import recipe_logic
 
 # global variables 
