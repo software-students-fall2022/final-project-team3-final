@@ -17,11 +17,22 @@ try:
 	#database = cxn['___'] # store a reference to the database
 	print(' *', 'Connected to MongoDB!') # if we get here, the connection worked!
 	
-@app.route("/")
+@app.route('/', methods=('GET', 'POST'))
 def index():
+	if request.method == "POST":
+		#store ingredients user enters into list
+		userInput = request.form['userInput']
+		print(userInput)
+		return redirect('/results', code=302)
+	
 	return render_template('index.html')
 
-
+# display results 
+@app.route('/results')
+def results():
+	recipe = {'img': 'img-link', 'name': 'pizza', 'spices': 'oregano, basil'}
+	recipes = [recipe]
+	return render_template('results.html', recipes=recipes)
 
 # run the app
 if __name__ == "__main__":
