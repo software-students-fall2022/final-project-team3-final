@@ -1,7 +1,6 @@
 from pymongo import MongoClient
-from flask import Flask
-from flask import request
-from flask import render_template
+from flask import Flask, request, render_template
+from dotenv import dotenv_values
 
 app= Flask(__name__)
 
@@ -21,7 +20,7 @@ def get_ingredients():
         create_ingredients= request.form['ingredients']
         ingredients= create_ingredients.split(',')
         # maybe need to fix to return different html
-        return render_template('index.html')
+        return render_template('index.html', ingredients=ingredients)
 
     return render_template('index.html')
 
@@ -31,7 +30,7 @@ def get_recipes():
     ingredients=get_ingredients
     for ingredient in ingredients:
         #access database and look for ingredient in cleaned_ingredients column
-        recipe=database.cleaned_ingredients.find({ingredient})
+        recipe=database.cleaned_ingredients.find_one({ingredient})
         #add recipe to recipes dictionary
         recipes[recipe["title"]]=recipe["instructions"]
-    return render_template('index.html')
+    return render_template('index.html', recipes=recipes)
