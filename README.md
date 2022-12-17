@@ -11,7 +11,7 @@ In a nutshell, we're matching a list of ingredients to the best recipe! We're us
 Figma designs link [here](https://www.figma.com/file/9vgLSVy1IFhfK5x9lc7Z5r/SWE-Project-5?node-id=0%3A1&t=uthrQBeSZ5pnSrXY-1)
 
 Team Members:
-- [Anvi Agrawal](https://github.com/agarwalanvi01)
+- [Anvi Agarwal](https://github.com/agarwalanvi01)
 - [Ishana Goyal](https://github.com/ishana-goyal)
 - [Shannon Huang](https://github.com/shannonh800)
 - [Ankit Jain](https://github.com/ankit181818)
