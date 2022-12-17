@@ -12,7 +12,7 @@ client = MongoClient(CONNECTION_STRING)
 database = client["recipes"]
 collection = database["Data"]
 
-'''
+''' Commented out accidental front-end code
 @app.route("/enter-ingredients", methods=['POST', 'GET'])
 def get_ingredients():
     #store ingredients user enters into list
@@ -24,13 +24,13 @@ def get_ingredients():
 
     return render_template('index.html')
 '''
-def get_recipes():
+def get_recipes(user_ingredients):
     # store recipes in dictionary where key:title of recipe, value:instructions for recipe
-    recipes={}
-    ingredients=get_ingredients
-    for ingredient in ingredients:
+    matched_recipes = []
+    for ingredient in user_ingredients:
         #access database and look for ingredient in cleaned_ingredients column
-        recipe=database.cleaned_ingredients.find_one({ingredient})
+        recipe = database.cleaned_ingredients.find_one({ingredient})
         #add recipe to recipes dictionary
-        recipes[recipe["title"]]=recipe["instructions"]
-    return  recipes
+        #recipes[recipe["title"]]=recipe["instructions"]
+        matched_recipes.append({'name': recipe['title'], 'instructions': recipe['instructions']})
+    return matched_recipes
