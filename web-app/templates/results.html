@@ -15,13 +15,15 @@
 				<th>Dish</th>
 				<th>Other Spices</th>
 			</tr>
-			{{ #each recipes }}
+			
+			{% for recipe in recipes %}
 			<tr>
-				<td>{{ this.img }}/td>
-				<td>{{ this.name }}</td>
-				<td>{{ this.spices }}</td>
+				<td>{{ recipe.img }}/td>
+				<td>{{ recipe.name }}</td>
+				<td>{{ recipe.spices }}</td>
 			</tr>
-			{{ /each }}
+			{% endfor %}
+			
 		</table>
 	</body>
 </html>

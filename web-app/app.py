@@ -23,7 +23,8 @@ def index():
 
 @app.route("/results")
 def results():
-	recipes = {'img': 'img', 'name': 'pizza', 'spices': 'oregano, basil'}
+	recipe = {'img': 'img-link', 'name': 'pizza', 'spices': 'oregano, basil'}
+	recipes = [recipe]
 	return render_template('results.html', recipes=recipes)
 
 # run the app
