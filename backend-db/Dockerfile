@@ -12,12 +12,12 @@ ADD . /app
 # in Python, a requirements.txt file is a way of indicating dependencies in a way that the package manager, pip, can understand
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 # by default Docker containers are closed off to the external world
-# Make port 80 available to the world outside this container
 
+# Make port 2000 available to the world outside this container
 EXPOSE 2000
 
 # Define an environment variable... this will be available to programs running inside the container
 ENV NAME World
 
-# Run app.py when the container launches
-CMD [ "python", "-m" , "flask", "run", "--host=0.0.0.0", "--port=2000"]
+# Run recipe_logic.py when the container launches
+CMD [ "python", "recipe_logic.py"]

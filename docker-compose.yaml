@@ -13,7 +13,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
   machine-learning-client:
-    build: ./machine-learning-client
+    build: ./backend-db
     ports:
       - 2000:2000
     depends_on:
