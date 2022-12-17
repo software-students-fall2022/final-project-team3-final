@@ -31,6 +31,5 @@ def get_recipes(user_ingredients):
         #access database and look for ingredient in cleaned_ingredients column
         recipe = database.cleaned_ingredients.find_one({ingredient})
         #add recipe to recipes dictionary
-        #recipes[recipe["title"]]=recipe["instructions"]
         matched_recipes.append({'name': recipe['title'], 'instructions': recipe['instructions']})
     return matched_recipes
