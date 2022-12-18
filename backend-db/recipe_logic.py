@@ -1,10 +1,11 @@
 from pymongo import MongoClient
-from dotenv import dotenv_values
+from flask import Flask, request, render_template
+# from dotenv import dotenv_values
 
 #app= Flask(__name__)
 
 # provide MongoDB Atlas URL
-CONNECTION_STRING = "mongodb+srv://user:<root>@cluster0.fgszvaj.mongodb.net/?retryWrites=true&w=majority"
+CONNECTION_STRING = "mongodb+srv://user:root@cluster0.fgszvaj.mongodb.net/?retryWrites=true&w=majority"
 # create connection
 client = MongoClient(CONNECTION_STRING)
 # find database and collection
@@ -23,12 +24,15 @@ def get_ingredients():
 
     return render_template('index.html')
 '''
+
+
 def get_recipes(user_ingredients):
     # store recipes in dictionary where key:title of recipe, value:instructions for recipe
     matched_recipes = []
     for ingredient in user_ingredients:
-        #access database and look for ingredient in cleaned_ingredients column
+        # access database and look for ingredient in cleaned_ingredients column
         recipe = database.cleaned_ingredients.find_one({ingredient})
-        #add recipe to recipes dictionary
-        matched_recipes.append({'name': recipe['title'], 'instructions': recipe['instructions']})
+        # add recipe to recipes dictionary
+        matched_recipes.append(
+            {'name': recipe['title'], 'instructions': recipe['instructions']})
     return matched_recipes
