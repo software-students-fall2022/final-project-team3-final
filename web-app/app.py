@@ -6,6 +6,8 @@ from os.path import dirname, join
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # import recipe_logic
+# sys.path("./backend-db")
+# import recipe_logic
 
 # global variables
 config = dotenv_values(".env")
@@ -43,9 +45,9 @@ def index():
 
 @app.route('/results')
 def results():
-    recipe = {'img': 'img-link', 'name': 'pizza', 'spices': 'oregano, basil'}
+    recipe = {'img': 'img-link', 'name': 'Pizza', 'spices': 'Oregano, Basil'}
     recipes = [recipe]
-    # recipes = recipe_logic.get_recipes(userInput) <- for later
+    #recipes = recipe_logic.get_recipes(userInput)
     return render_template('results.html', recipes=recipes)
 
 
