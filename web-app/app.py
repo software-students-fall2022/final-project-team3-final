@@ -13,21 +13,20 @@ app = Flask(__name__)
 # userInput = ''
 
 # connect to the database
-# provide MongoDB Atlas URL
-CONNECTION_STRING = "mongodb+srv://user:<root>@cluster0.fgszvaj.mongodb.net/?retryWrites=true&w=majority"
-# create connection
-client = MongoClient(CONNECTION_STRING)
 try:
-    # verify the connection works by pinging the database
-    # The ping command is cheap and does not require auth.
+    # provide MongoDB Atlas URL
+    CONNECTION_STRING = "mongodb+srv://user:root@cluster0.fgszvaj.mongodb.net/?retryWrites=true&w=majority"
+    # create connection
+    client = MongoClient(CONNECTION_STRING, 500)
+# verify the connection works by pinging the database
+# The ping command is cheap and does not require auth.
     client.admin.command('ping')
-    # database = cxn['___'] # store a reference to the database
-    # if we get here, the connection worked!
+# if we get here, the connection worked!
     database = client["recipes"]
     collection = database["Data"]
     print(' *', 'Connected to MongoDB!')
-except:
-    print("MongoDB not connected.")
+except Exception as e:
+    print(e)
 
 
 @app.route('/', methods=('GET', 'POST'))
