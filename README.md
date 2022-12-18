@@ -17,3 +17,13 @@ Team Members:
 - [Ankit Jain](https://github.com/ankit181818)
 - [Andrei Stoica](https://github.com/andreicstoica)
 - [Grace Zhang](https://github.com/gracezhang89)
+
+## Instructions for how to configure and run all parts of your project for any developer on any platform - these instructions must work!
+
+- Install Docker
+- Run the command "docker compose up --build" while you are located in the main directory
+- The website will be hosted at localhost:2001 
+- There are no specific requirements for a .env file, but you can make one if you would like
+
+## Instructions for how to import any starter data into the database, if necessary for the system to operate correctly at first.
+- Unneeded, all data is hosted as a separate subsystem. 
