@@ -4,10 +4,34 @@
 		<title>Spice Grindr</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="style.css" rel="stylesheet">
+		<link href="static/css/style.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<h1>Welcome to Spice Grindr!</h1>
-		<p>Please type in a spice below...</p>
+		<h1 id="title">Spice Grindr</h1>
+		<form action="/" method="POST" id="searchBox">
+			<input type="text" id="userInput" name="userInput" placeholder="Type ingredients here...">
+			<input type="submit" class="button" placeholder="Search">
+		</form>
+		<div class="searchIngredient">Flour</div>
+		<div class="searchIngredient">Vanilla Extract</div>
+		<div class="searchIngredient">Eggs</div>
+
+		<div .class="recipeResult">
+			<!--
+			<p .class="recipeName">Almond Crusted French Toast</div>
+			<p .class="ingredientsMatch">
+				<svg
+					width="300"
+					height="200"
+					xmlns="https://www.clipartmax.com/png/middle/270-2707339_confirm-comments-check-mark-icon-svg.png">
+					style="fill:#A6C05C"
+				</svg>
+				All ingredients matched
+			</p>
+			-->
+		</div>
 	</body>
 </html>
