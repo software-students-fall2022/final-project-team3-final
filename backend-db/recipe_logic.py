@@ -1,8 +1,5 @@
 from pymongo import MongoClient
-from flask import Flask, request, render_template
-# from dotenv import dotenv_values
-
-#app= Flask(__name__)
+from dotenv import dotenv_values
 
 # provide MongoDB Atlas URL
 CONNECTION_STRING = "mongodb+srv://user:root@cluster0.fgszvaj.mongodb.net/?retryWrites=true&w=majority"
@@ -24,7 +21,6 @@ def get_ingredients():
 
     return render_template('index.html')
 '''
-
 
 def get_recipes(user_ingredients):
     # store recipes in dictionary where key:title of recipe, value:instructions for recipe

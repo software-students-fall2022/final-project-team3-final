@@ -32,7 +32,6 @@ try:
 except Exception as e:
     print(e)
 
-
 @app.route('/', methods=('GET', 'POST'))
 def index():
     if request.method == "POST":
@@ -43,15 +42,12 @@ def index():
     return render_template('index.html')
 
 # display results
-
-
 @app.route('/results')
 def results():
     recipe = {'img': 'img-link', 'name': 'Pizza', 'spices': 'Oregano, Basil'}
     recipes = [recipe]
     #recipes = recipe_logic.get_recipes(userInput)
     return render_template('results.html', recipes=recipes)
-
 
 # run the app
 if __name__ == "__main__":
