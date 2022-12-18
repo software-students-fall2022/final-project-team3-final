@@ -1,26 +1,26 @@
 from flask import Flask, render_template, request, redirect, abort, url_for, make_response, flash
-from pymongo import MongoClient
-from dotenv import dotenv_values
+# from pymongo import MongoClient
+# from dotenv import dotenv_values
 import os
 from os.path import dirname, join
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import recipe_logic
+# import recipe_logic
 
 # global variables 
-config = dotenv_values(".env")
+# config = dotenv_values(".env")
 app = Flask(__name__)
-userInput = ''
+# userInput = ''
 
-# connect to the database
-# don't know if we want to change this for next time 
-database = None
-cxn = pymongo.MongoClient("mongodb", 27017)
-try:
-	# verify the connection works by pinging the database
-	cxn.admin.command('ping') # The ping command is cheap and does not require auth.
-	#database = cxn['___'] # store a reference to the database
-	print(' *', 'Connected to MongoDB!') # if we get here, the connection worked!
+# # connect to the database
+# # don't know if we want to change this for next time 
+# database = None
+# cxn = pymongo.MongoClient("mongodb", 27017)
+# try:
+# 	# verify the connection works by pinging the database
+# 	cxn.admin.command('ping') # The ping command is cheap and does not require auth.
+# 	#database = cxn['___'] # store a reference to the database
+# 	print(' *', 'Connected to MongoDB!') # if we get here, the connection worked!
 	
 @app.route('/', methods=('GET', 'POST'))
 def index():
@@ -29,7 +29,6 @@ def index():
 		userInput = request.form['userInput']
 		print(userInput)
 		return redirect('/results', code=302)
-	
 	return render_template('index.html')
 
 # display results 
