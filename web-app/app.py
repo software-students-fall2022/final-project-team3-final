@@ -1,22 +1,14 @@
 from flask import Flask, render_template, request, redirect, abort, url_for, make_response, flash, session
 from pymongo import MongoClient
-#from dotenv import dotenv_values
 import os
 
-# import recipe_logic
 from os.path import dirname, join
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-# import recipe_logic
-#sys.path("./backend-db")
-#import recipe_logic
-# global variables
 #config = dotenv_values(".env")
 app = Flask(__name__)
-# userInput = ''
 
 app.secret_key = 'BAD_SECRET_KEY'
-
 
 # connect to the database
 try:
@@ -34,6 +26,7 @@ try:
 except Exception as e:
     print(e)
 
+## MIDDLEWEAR
 def clean_input(user_input):
     out = user_input.split(',')
     for i in range(len(out)):
@@ -53,7 +46,6 @@ def is_ingredient(ingredient):
             is_ingredient = True
     return is_ingredient  
     
-
 def get_recipes(user_ingredients):
     # store recipes in dictionary where key:title of recipe, value:instructions for recipe
     matched_recipes = []
@@ -82,6 +74,7 @@ def get_recipes(user_ingredients):
         #     {'name': recipe['title'], 'instructions': recipe['instructions']})
     return matched_recipes
 
+## ROUTES
 @app.route('/', methods=('GET', 'POST'))
 def index():
     if request.method == "POST":
@@ -96,7 +89,6 @@ def index():
     return render_template('index.html')
 
 # display results
-
 @app.route('/results')
 def results():
     # recipe = {'img': 'img-link', 'name': 'Pizza', 'spices': 'Oregano, Basil'}
@@ -104,7 +96,6 @@ def results():
     user_input = session['user_input']
     recipes = get_recipes(user_input)
     return render_template('results.html', recipes=recipes)
-
 
 # run the app
 if __name__ == "__main__":
