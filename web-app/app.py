@@ -62,7 +62,8 @@ def get_recipes(user_ingredients):
                 
                 if match_score > 0: #set an arbitrary cutoff at 0 to make sure we are generally showing something
                     matched_recipes.append(
-                        {'img': elem['Image_Name'], 'name': elem['Title'], 'ingredients': elem['Cleaned_Ingredients']})            
+                        {'img': "./images/" + elem['Image_Name'] + ".jpg", 'name': elem['Title'], 'ingredients': elem['Cleaned_Ingredients'].replace("[", "").replace("]", "").replace("'", "").split(", ")}) 
+                    print(type(matched_recipes[0]))           
     #print(database.collection.stats())
     #for ingredient in user_ingredients:
         # access database and look for ingredient in cleaned_ingredients column
@@ -71,7 +72,10 @@ def get_recipes(user_ingredients):
         # add recipe to recipes dictionary
         # matched_recipes.append(
         #     {'name': recipe['title'], 'instructions': recipe['instructions']})
-    return matched_recipes
+    if len(matched_recipes) > 5:
+        return matched_recipes[0:5]
+    else:
+        return matched_recipes
 
 ## ROUTES
 @app.route('/', methods=('GET', 'POST'))
@@ -93,9 +97,8 @@ def results():
     # recipe = {'img': 'img-link', 'name': 'Pizza', 'spices': 'Oregano, Basil'}
     # recipes = [recipe]
     user_input = session['user_input']
-    recipes = get_recipes(user_input)
-    return render_template('results.html', recipes=recipes)
+    return render_template('results.html', recipes=get_recipes(user_input))
 
 # run the app
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', debug=True, port=2001)

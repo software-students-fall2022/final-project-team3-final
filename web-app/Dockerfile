@@ -20,4 +20,4 @@ EXPOSE 2001
 ENV NAME World
 
 # Run app.py when the container launches
-CMD ["python", "app.py", "--port=2001"]
+CMD ["python", "app.py"]
