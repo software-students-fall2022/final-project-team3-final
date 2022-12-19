@@ -1,6 +1,6 @@
 # in Docker, it is common to base a new image on a previously-created image
 # Use an official Python runtime image as a parent image to base this image on
-FROM python:3.7
+FROM --platform=linux/amd64 python:3.7
 
 # Set the working directory within the image to /app
 WORKDIR /app
