@@ -2,137 +2,59 @@ html {
 	font-family: 'Inter';
 }
 
-#title {
-	position: absolute;
-	padding-top: 2rem;
-	padding-left: 2rem;
- 
-	font-family: 'Inter';
+body {
+	margin: auto;
+	width: 80%;
+	text-align: center;
+	background-color: #FFFBF5;
+}
+
+h1 {
+	padding-top: 1rem;
 	font-style: normal;
 	font-weight: 700;
 	font-size: 42px;
 	color: #2D3561;
 }
 
-#searchBox {
-	box-sizing: border-box;
-	position: absolute;
-	width: 900px;
-	height: 60px;
-	left: 100px;
-	top: 150px;
-	border: 3px solid #C05C7E;
-	border-radius: 15px;
+h2 {
+	color: #2D3561;
+
 }
 
-#userInput {
-	position: absolute;
-	width: 850px;
-	height: 50px;
-	padding-left: 25px;
-
-	font-family: 'Inter';
+.input {
+	padding: .5rem;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 18px;
 
-	outline: none;
-	border: none;
-	border-radius: 10px;
+	outline: solid;
+	border-radius: 15px;
 	color: #2D3561;
 }
 
 .button {
-	position: absolute;
-	width: 150px;
-	height: 60px;
-	left: 910px;
-	top: -2.5px;
+	width: auto;
+	height: auto;
+	padding: .5rem;
+	margin-left: .5rem;
 
 	background: #C05C7E;
 	border: 3px solid #C05C7E;
 	border-radius: 15px;
 
-	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 18px;
 
-	color: #FFFFFF;
-}
-
-.searchIngredient {
-	position: relative;
-	width: fit-content;
-	height: 50px;
-	left: 90px;
-	top: 230px;
-	margin-bottom: 15px;
-	padding-left: 20px;
-	padding-right: 20px;
-
-	background: rgba(255, 185, 97, 0.5);
-	border-radius: 15px;
-
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 50px;
-
-	color: #2D3561;
-}
-
-.recipeResult {
-	display: inline-block;
-	width: 750px;
-	left: 200px;
-	height: 200px;
-
-	background: rgba(192, 92, 126, 0.1);
-	border: rgba(192, 92, 126, 0.1);
-	border-radius: 15px;
-}
-
-.recipeName {
-	position: absolute;
-	width: 346px;
-	height: 29px;
-	left: 608px;
-
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 24px;
-	line-height: 29px;
-	/* identical to box height */
-
-	color: #2D3561;
-}
-
-.ingredientsMatch {
-	position: absolute;
-	width: 95px;
-	height: 17px;
-	left: 644px;
-
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 17px;
-	/* identical to box height */
-
-	color: #2D3561;
+	color: #FFFFFF
 }
 
 table {
-	position: relative;
-	left: 100px;
-	margin-top: 10%;
+	left: 1rem;
+	margin-top: 1rem;
 	border-collapse: collapse;
 	border: 2px solid rgb(200, 200, 200);
-	letter-spacing: 1px;
 	font-size: 0.8rem;
 	font-family: 'Inter';
 }
@@ -141,18 +63,17 @@ td,
 th {
 	border: 1px solid rgb(190, 190, 190);
 	left: 100px;
-	padding: 10px 20px;
+	padding: .5rem .25rem;
 	font-family: 'Inter';
 }
 
 th {
 	background-color: rgb(235, 235, 235);
-	font-family: 'Inter';
 }
 
 td {
-	text-align: center;
-	font-family: 'Inter';
+	text-align: left;
+	padding: .25rem;
 }
 
 tr:nth-child(even) td {
@@ -161,8 +82,4 @@ tr:nth-child(even) td {
 
 tr:nth-child(odd) td {
 	background-color: rgb(245, 245, 245);
-}
-
-caption {
-	padding: 10px;
 }
