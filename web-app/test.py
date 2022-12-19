@@ -3,7 +3,6 @@ import sys
 from app import app
 
 class Tests:
-
     #
     # Test functions
     #

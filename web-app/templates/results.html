@@ -20,9 +20,15 @@
 			
 			{% for recipe in recipes %}
 			<tr>
-				<td>{{ recipe.img }}</td>
+				<td> <img width='50px' height='auto' src={{ recipe.img }}> </td>
 				<td>{{ recipe.name }}</td>
-				<td>{{ recipe.ingredients }}</td>
+				<td>
+					<ul>
+						{% for ingredient in recipe.ingredients %}
+						<li> {{ ingredient }} </li>
+						{% endfor %}
+					</ul>
+				</td>
 			</tr>
 			{% endfor %}
 			

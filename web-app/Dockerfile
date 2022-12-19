@@ -15,8 +15,9 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Make port 2001 available to the world outside this container
 EXPOSE 2001
+
 # Define an environment variable... this will be available to programs running inside the container
 ENV NAME World
 
 # Run app.py when the container launches
-CMD ["python", "app.py", "--host=0.0.0.0", "--port=2001"]
+CMD ["python", "app.py"]
