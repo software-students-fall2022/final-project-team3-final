@@ -21,10 +21,18 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       # Digital Ocean deployment
+      - name: Build image 
+        run: docker compose up --build
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Log in to DO Container Registry 
+        run: doctl registry login --expiry-seconds 600
+      - name: Tag image 
+        run: docker tag final-project-team3-final-web-app registry.digitalocean.com/swefinalteam3/image
+      - name: Push image to DO Container Registry 
+        run: docker push registry.digitalocean.com/swefinalteam3/image
       # Runs a set of commands using the runners shell
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
