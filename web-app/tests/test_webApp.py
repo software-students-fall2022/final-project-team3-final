@@ -32,7 +32,3 @@ def test_blank_ingredient_is_ingredient():
 def test_index_route():
     response = app.test_client().get('/')
     assert response.status_code == 200
-
-def test_results_route():
-    response = app.test_client().get('/results')
-    assert response.status_code == 200
