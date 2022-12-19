@@ -2,6 +2,7 @@
 # Final Project
 
 For both CI&CD:
+
 ![Badge](https://github.com/software-students-fall2022/final-project-team3-final/actions/workflows/web-app.yml/badge.svg)
 
 ## Welcome to our Final Project!
