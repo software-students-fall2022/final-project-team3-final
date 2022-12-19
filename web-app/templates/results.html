@@ -16,7 +16,6 @@
 	<h2>Listing the top 5 results:</h2>
 	<table>
 		<tr>
-			<th>Image</th>
 			<th>Dish</th>
 			<th>Ingredients Required</th>
 			<th>Instructions</th>
@@ -24,9 +23,13 @@
 
 		{% for recipe in recipes %}
 		<tr>
-			
-			<td> <img width='250px' height='auto' src={{recipe.img}} alt="image of dish"> </td>
-			<td>{{ recipe.name }}</td>
+
+			<td>
+				<div>
+					<p>{{ recipe.name }}</p>
+					<img width='250px' height='auto' src={{recipe.img}} alt="image of dish">
+				</div>
+			</td>
 			<td>
 				<ul>
 					{% for ingredient in recipe.ingredients %}
@@ -50,4 +53,5 @@
 
 	</table>
 </body>
+
 </html>

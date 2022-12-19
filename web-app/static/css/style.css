@@ -65,15 +65,20 @@ th {
 	left: 100px;
 	padding: .5rem .25rem;
 	font-family: 'Inter';
+	text-align: left;
+	vertical-align: top;
+	width: 30%;
 }
 
 th {
-	background-color: rgb(235, 235, 235);
+	background-color: rgb(235, 235, 235) !important;
+	color: #2D3561;
 }
 
 td {
 	text-align: left;
 	padding: .25rem;
+	vertical-align: top;
 }
 
 tr:nth-child(even) td {

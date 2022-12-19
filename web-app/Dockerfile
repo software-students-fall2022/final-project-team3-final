@@ -2,12 +2,12 @@
 # Use an official Python runtime image as a parent image to base this image on
 FROM --platform=linux/amd64 python:3.7
 
-# Set the working directory within the image to /app
-WORKDIR /app
+# Set the working directory within the image to /web-app
+WORKDIR /web-app
 
 # the ADD command is how you add files from your local machine into a Docker image
 # Copy the current directory contents into the container at /app
-ADD . /app
+ADD . /web-app
 # Install any needed packages specified in requirements.txt
 # in Python, a requirements.txt file is a way of indicating dependencies in a way that the package manager, pip, can understand
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
@@ -20,4 +20,4 @@ EXPOSE 2001
 ENV NAME World
 
 # Run app.py when the container launches
-CMD ["python", "app.py"]
+CMD ["python3", "./app.py"]
