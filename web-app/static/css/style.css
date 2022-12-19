@@ -4,16 +4,13 @@ html {
 
 #title {
 	position: absolute;
-	width: 322px;
-	height: 58px;
-	left: 100px;
-	top: 30px;
-
+	padding-top: 2rem;
+	padding-left: 2rem;
+ 
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
 	font-size: 42px;
-	line-height: 58px;
 	color: #2D3561;
 }
 
