@@ -2,7 +2,6 @@
 # Final Project
 
 ![Badge](https://github.com/software-students-fall2022/final-project-team3-final/actions/workflows/web-app.yml/badge.svg)
-![Badge](https://github.com/software-students-fall2022/final-project-team3-final/actions/workflows/backend-db.yml/badge.svg)
 
 ## Welcome to our Final Project!
 
