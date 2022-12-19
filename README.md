@@ -9,7 +9,7 @@ In a nutshell, we're matching a list of ingredients to the best recipe! We're us
 
 Figma designs link [here](https://www.figma.com/file/9vgLSVy1IFhfK5x9lc7Z5r/SWE-Project-5?node-id=0%3A1&t=uthrQBeSZ5pnSrXY-1)
 
-DockerHub Container Image [here] (www.google.com)
+DockerHub Container Image [here](https://hub.docker.com/r/andreistoica/swe-final-team3/tags)
 
 ## Features for Web App
 - Begin by entering in a comma-separated list of ingredients in your kitchen on the main page.
