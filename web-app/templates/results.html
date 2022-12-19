@@ -12,44 +12,42 @@
 </head>
 
 <body>
-	<h1 id="title">Recipe Finder Results</h1>
-	<div>
-		<table id="table">
-			<tr>
-				<th>Image</th>
-				<th>Dish</th>
-				<th>Ingredients Required</th>
-				<th>Instructions</th>
-			</tr>
+	<h1>Recipe Finder Results</h1>
+	<h2>Listing the top 5 results:</h2>
+	<table>
+		<tr>
+			<th>Image</th>
+			<th>Dish</th>
+			<th>Ingredients Required</th>
+			<th>Instructions</th>
+		</tr>
 
-			{% for recipe in recipes %}
-			<tr>
-				
-				<td> <img width='250px' height='auto' src={{recipe.img}}> </td>
-				<td>{{ recipe.name }}</td>
-				<td>
-					<ul>
-						{% for ingredient in recipe.ingredients %}
-						<li>
-							<div>{{ ingredient }} </div>
-						</li>
-						{% endfor %}
-					</ul>
-				</td>
-				<td>
-					<ol>
-						{% for instruction in recipe.instructions %}
-						<li>
-							<div> {{ instruction }}</div>
-						</li>
-						{% endfor %}
-					</ol>
-				</td>
-			</tr>
-			{% endfor %}
+		{% for recipe in recipes %}
+		<tr>
+			
+			<td> <img width='250px' height='auto' src={{recipe.img}} alt="image of dish"> </td>
+			<td>{{ recipe.name }}</td>
+			<td>
+				<ul>
+					{% for ingredient in recipe.ingredients %}
+					<li>
+						<div>{{ ingredient }} </div>
+					</li>
+					{% endfor %}
+				</ul>
+			</td>
+			<td>
+				<ol>
+					{% for instruction in recipe.instructions %}
+					<li>
+						<div> {{ instruction }}</div>
+					</li>
+					{% endfor %}
+				</ol>
+			</td>
+		</tr>
+		{% endfor %}
 
-		</table>
-	</div>
+	</table>
 </body>
-
 </html>
