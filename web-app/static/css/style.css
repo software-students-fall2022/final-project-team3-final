@@ -1,3 +1,7 @@
+html {
+	font-family: 'Inter';
+}
+
 #title {
 	position: absolute;
 	width: 322px;
@@ -127,26 +131,31 @@
 
 table {
 	position: relative;
+	left: 100px;
 	margin-top: 10%;
 	border-collapse: collapse;
 	border: 2px solid rgb(200, 200, 200);
 	letter-spacing: 1px;
 	font-size: 0.8rem;
-	background-color: #2D3561;
+	font-family: 'Inter';
 }
 
 td,
 th {
 	border: 1px solid rgb(190, 190, 190);
+	left: 100px;
 	padding: 10px 20px;
+	font-family: 'Inter';
 }
 
 th {
 	background-color: rgb(235, 235, 235);
+	font-family: 'Inter';
 }
 
 td {
 	text-align: center;
+	font-family: 'Inter';
 }
 
 tr:nth-child(even) td {
