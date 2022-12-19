@@ -19,6 +19,7 @@
 				<th>Image</th>
 				<th>Dish</th>
 				<th>Ingredients Required</th>
+				<th>Instructions</th>
 			</tr>
 
 			{% for recipe in recipes %}
@@ -33,6 +34,15 @@
 						</li>
 						{% endfor %}
 					</ul>
+				</td>
+				<td>
+					<ol>
+						{% for instruction in recipe.instructions %}
+						<li>
+							<div> {{ instruction }}</div>
+						</li>
+						{% endfor %}
+					</ol>
 				</td>
 			</tr>
 			{% endfor %}

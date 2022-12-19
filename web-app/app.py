@@ -67,7 +67,7 @@ def get_recipes(user_ingredients):
 
                 if match_score > 0:  # set an arbitrary cutoff at 0 to make sure we are generally showing something
                     matched_recipes.append(
-                        {'img': "..static/images/" + elem['Image_Name'] + ".jpg", 'name': elem['Title'], 'ingredients': elem['Cleaned_Ingredients'].replace("[", "").replace("]", "").replace("'", "").split(", ")})
+                        {'img': "..static/images/" + elem['Image_Name'] + ".jpg", 'name': elem['Title'], 'ingredients': elem['Cleaned_Ingredients'].replace("[", "").replace("]", "").replace("'", "").split(", "), 'instructions':elem['Instructions'].split(". ")})
                     print(type(matched_recipes[0]))
     # print(database.collection.stats())
     # for ingredient in user_ingredients:
