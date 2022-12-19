@@ -25,7 +25,9 @@ try:
 except Exception as e:
     print(e)
 
-## MIDDLEWEAR
+# MIDDLEWEAR
+
+
 def clean_input(user_input):
     out = user_input.split(',')
     for i in range(len(out)):
@@ -33,39 +35,42 @@ def clean_input(user_input):
         out[i] = out[i].lower()
     return out
 
+
 def is_ingredient(ingredient):
-    #takes an ingredient and makes sure that it is one
+    # takes an ingredient and makes sure that it is one
     is_ingredient = True
-    if len(ingredient) <= 1:  #length > 1
+    if len(ingredient) <= 1:  # length > 1
         is_ingredient = False
-    
+
     is_ingredient = False
-    for c in ingredient:  #makes sure that user input contains at least one letter
+    for c in ingredient:  # makes sure that user input contains at least one letter
         if c.isalpha():
             is_ingredient = True
-    return is_ingredient  
-    
+    return is_ingredient
+
+
 def get_recipes(user_ingredients):
     # store recipes in dictionary where key:title of recipe, value:instructions for recipe
     matched_recipes = []
     #database['Data'].find_one({'Cleaned_Ingredients': { '$regex' : "cumin seeds"}})
     for ingredient in user_ingredients:
         if is_ingredient(ingredient):
-            for elem in database['Data'].find({'Cleaned_Ingredients': { '$regex' : ingredient}}):
-            #print(elem)
-                match_score = 0 #create a very crude 'cost function' to return most applicable results based on proximity to our ingredients list
-                for ingredient in user_ingredients: # we want recipes where all of our ingredients are represented, not just a few
+            for elem in database['Data'].find({'Cleaned_Ingredients': {'$regex': ingredient}}):
+                # print(elem)
+                match_score = 0  # create a very crude 'cost function' to return most applicable results based on proximity to our ingredients list
+                # we want recipes where all of our ingredients are represented, not just a few
+                for ingredient in user_ingredients:
                     if ingredient in elem['Cleaned_Ingredients']:
                         match_score += 1
                     else:
                         match_score -= 1
-                
-                if match_score > 0: #set an arbitrary cutoff at 0 to make sure we are generally showing something
+
+                if match_score > 0:  # set an arbitrary cutoff at 0 to make sure we are generally showing something
                     matched_recipes.append(
-                        {'img': "./images/" + elem['Image_Name'] + ".jpg", 'name': elem['Title'], 'ingredients': elem['Cleaned_Ingredients'].replace("[", "").replace("]", "").replace("'", "").split(", ")}) 
-                    print(type(matched_recipes[0]))           
-    #print(database.collection.stats())
-    #for ingredient in user_ingredients:
+                        {'img': "..static/images/" + elem['Image_Name'] + ".jpg", 'name': elem['Title'], 'ingredients': elem['Cleaned_Ingredients'].replace("[", "").replace("]", "").replace("'", "").split(", ")})
+                    print(type(matched_recipes[0]))
+    # print(database.collection.stats())
+    # for ingredient in user_ingredients:
         # access database and look for ingredient in cleaned_ingredients column
         #recipe = database.cleaned_ingredients.find_one(ingredient)
 
@@ -77,13 +82,15 @@ def get_recipes(user_ingredients):
     else:
         return matched_recipes
 
-## ROUTES
+# ROUTES
+
+
 @app.route('/', methods=('GET', 'POST'))
 def index():
     if request.method == "POST":
         # store ingredients user enters into list
         userInput = request.form['userInput']
-        #print(userInput)
+        # print(userInput)
         ingredients_query = clean_input(userInput)
 
         session['user_input'] = ingredients_query
@@ -92,12 +99,15 @@ def index():
     return render_template('index.html')
 
 # display results
+
+
 @app.route('/results')
 def results():
     # recipe = {'img': 'img-link', 'name': 'Pizza', 'spices': 'Oregano, Basil'}
     # recipes = [recipe]
     user_input = session['user_input']
     return render_template('results.html', recipes=get_recipes(user_input))
+
 
 # run the app
 if __name__ == "__main__":
